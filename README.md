@@ -15,24 +15,26 @@ search up the DOM tree to fill in missing pieces of information.
 
 Include Totango's SDR library:
 
-    <script src="//s3.amazonaws.com/totango-cdn/sdr.js"></script>
+    <script src="//s3.amazonaws.com/totango-cdn/totango.js"></script>
 
 Initialize the Totango tracker:
 
-    jQuery(function() {
-      try {
-        var tracker = new __sdr(...);
-      } catch (err) {
-        var tracker = {
-          track:    function() {},
-          identify: function() {}
-        }
-      }
-    });
+	try {
+		var totango = new __totango(...);
+	} catch (err) {
+		// uncomment the alert below for debugging only
+		// alert ("Totango code load failure, tracking will be ignored");
+		quite = function () {};
+		var totango = {
+			track: quite,
+			identify: quite,
+			setAccountAttributes: quite
+		};
+	}		
 
 Include jQuery-Totango:
 
-    <script src='/javascripts/jquery-totango-0.1.js' defer></script>
+    <script src='/javascripts/jquery-totango-0.2.js' defer></script>
 
 ## Usage ##
 
